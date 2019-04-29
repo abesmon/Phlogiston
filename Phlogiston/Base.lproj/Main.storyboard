@@ -26,17 +26,17 @@
             </objects>
             <point key="canvasLocation" x="-1241" y="-48"/>
         </scene>
-        <!--View Controller-->
+        <!--Draw Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Phlogiston" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="DrawController" customModule="Phlogiston" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rta-Tl-CAG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-Eu-b88" customClass="DrawingView" customModule="Phlogiston" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC" customClass="DrawingView" customModule="Phlogiston" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmS-Hj-q1M">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
@@ -46,24 +46,30 @@
                                             <action selector="clearPressed" destination="BYZ-38-t0r" id="a1p-CZ-XqK"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="edit" id="1Ue-go-EIb">
+                                        <connections>
+                                            <action selector="editPressed" destination="BYZ-38-t0r" id="nTf-47-c5W"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aeh-Eu-b88" secondAttribute="bottom" id="43x-Ui-q2I"/>
-                            <constraint firstItem="aeh-Eu-b88" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cct-Kz-hmf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aeh-Eu-b88" secondAttribute="trailing" id="JBg-G8-pzD"/>
-                            <constraint firstItem="qmS-Hj-q1M" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Jfe-oK-YfA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qmS-Hj-q1M" secondAttribute="bottom" id="PJM-LY-fok"/>
-                            <constraint firstItem="aeh-Eu-b88" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PiE-dJ-F2e"/>
-                            <constraint firstItem="qmS-Hj-q1M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fFH-BC-XZt"/>
+                            <constraint firstItem="gdD-v3-8QM" firstAttribute="trailing" secondItem="qmS-Hj-q1M" secondAttribute="trailing" id="1Rx-Z6-faB"/>
+                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="leading" secondItem="rta-Tl-CAG" secondAttribute="leading" id="Atx-9I-isv"/>
+                            <constraint firstItem="gdD-v3-8QM" firstAttribute="bottom" secondItem="qmS-Hj-q1M" secondAttribute="bottom" id="aZ0-Ji-F0L"/>
+                            <constraint firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="bZT-3O-Kin"/>
+                            <constraint firstItem="qmS-Hj-q1M" firstAttribute="leading" secondItem="gdD-v3-8QM" secondAttribute="leading" id="or7-7u-1wA"/>
+                            <constraint firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="t7T-en-Jhb"/>
+                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="top" secondItem="rta-Tl-CAG" secondAttribute="top" id="vCc-Lq-Ura"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="gdD-v3-8QM"/>
                     </view>
                     <navigationItem key="navigationItem" id="MYO-SX-GV7"/>
                     <connections>
-                        <outlet property="drawingView" destination="aeh-Eu-b88" id="1qD-GU-3h2"/>
+                        <outlet property="drawingView" destination="8bC-Xf-vdC" id="1v8-6q-VfG"/>
+                        <outlet property="view" destination="rta-Tl-CAG" id="Y5B-yV-ZZn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
