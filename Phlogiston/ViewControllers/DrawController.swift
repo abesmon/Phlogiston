@@ -8,10 +8,17 @@
 
 import UIKit
 
-struct DrawItem {
-    var path: UIBezierPath
+struct DrawingTool {
     var fillColor: UIColor?
     var strokeColor: UIColor?
+    var lineWidth: CGFloat = 1
+    
+    static let base = DrawingTool(fillColor: .black, strokeColor: .black, lineWidth: 1)
+}
+
+struct DrawItem {
+    var path: UIBezierPath
+    var tool: DrawingTool
 }
 
 class CanvasView: UIView {
@@ -22,10 +29,15 @@ class CanvasView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         items.forEach { item in
-            item.fillColor?.setFill()
-            item.strokeColor?.setStroke()
-            item.path.fill()
-            item.path.stroke()
+            item.path.lineWidth = item.tool.lineWidth
+            if let fillColor = item.tool.fillColor {
+                fillColor.setFill()
+                item.path.fill(with: .normal, alpha: fillColor.cgColor.alpha)
+            }
+            if let strokeColor = item.tool.strokeColor {
+                strokeColor.setStroke()
+                item.path.stroke(with: .normal, alpha: strokeColor.cgColor.alpha)
+            }
         }
     }
 }
@@ -35,12 +47,13 @@ class DrawController: UIViewController {
 
     private var toolController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ToolController") as! ToolController
     
+    private var drawingTool: DrawingTool = .base
     private var items: [DrawItem] = []
     private var currentItem: DrawItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        toolController.drawController = self
+        toolController.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +66,7 @@ class DrawController: UIViewController {
         let location = touch.location(in: canvas)
         let path = UIBezierPath()
         path.move(to: location)
-        currentItem = DrawItem(path: path, fillColor: UIColor.black.withAlphaComponent(0.7), strokeColor: UIColor.black.withAlphaComponent(0.7))
+        currentItem = DrawItem(path: path, tool: drawingTool)
         updateItems()
     }
 
@@ -109,5 +122,11 @@ class DrawController: UIViewController {
         canvas.frame = CGRect(origin: targetOrigin, size: targetSize)
         canvas.items.forEach { $0.path.apply(.init(scaleX: scale, y: scale)) }
         updateItems()
+    }
+}
+
+extension DrawController: ToolControllerDelegate {
+    func toolController(_ toolController: ToolController, didChangedDrawingTool drawingTool: DrawingTool) {
+        self.drawingTool = drawingTool
     }
 }
