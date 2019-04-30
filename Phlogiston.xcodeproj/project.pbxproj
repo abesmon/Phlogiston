@@ -85,6 +85,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A038F3E02276F0E6001B6F74 /* Build configuration list for PBXNativeTarget "Phlogiston" */;
 			buildPhases = (
+				A07D43CD22789AC20099415F /* ShellScript */,
 				A038F3CA2276F0E4001B6F74 /* Sources */,
 				A038F3CB2276F0E4001B6F74 /* Frameworks */,
 				A038F3CC2276F0E4001B6F74 /* Resources */,
@@ -143,6 +144,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A07D43CD22789AC20099415F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nMY_BUILD_NUMBER=$(git rev-list HEAD | wc -l | tr -d ' ')\necho $MY_BUILD_NUMBER\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A038F3CA2276F0E4001B6F74 /* Sources */ = {
