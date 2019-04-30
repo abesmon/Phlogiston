@@ -12,6 +12,7 @@
 		A038F3D72276F0E4001B6F74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038F3D52276F0E4001B6F74 /* Main.storyboard */; };
 		A038F3D92276F0E6001B6F74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A038F3D82276F0E6001B6F74 /* Assets.xcassets */; };
 		A038F3DC2276F0E6001B6F74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038F3DA2276F0E6001B6F74 /* LaunchScreen.storyboard */; };
+		A07D43C9227868D10099415F /* NSLayoutConstraint_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A038F3D82276F0E6001B6F74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A038F3DB2276F0E6001B6F74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A038F3DD2276F0E6001B6F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint_ext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				A038F3D82276F0E6001B6F74 /* Assets.xcassets */,
 				A038F3DA2276F0E6001B6F74 /* LaunchScreen.storyboard */,
 				A038F3DD2276F0E6001B6F74 /* Info.plist */,
+				A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */,
 			);
 			path = Phlogiston;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07D43C9227868D10099415F /* NSLayoutConstraint_ext.swift in Sources */,
 				A038F3D42276F0E4001B6F74 /* DrawController.swift in Sources */,
 				A038F3D22276F0E4001B6F74 /* AppDelegate.swift in Sources */,
 			);
@@ -285,6 +289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 548GRBZ3D6;
 				INFOPLIST_FILE = Phlogiston/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 548GRBZ3D6;
 				INFOPLIST_FILE = Phlogiston/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

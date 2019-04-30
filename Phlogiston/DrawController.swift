@@ -14,7 +14,7 @@ struct DrawItem {
     var strokeColor: UIColor?
 }
 
-class DrawingView: UIView {
+class CanvasView: UIView {
     var items: [DrawItem] = [] {
         didSet { setNeedsDisplay() }
     }
@@ -31,7 +31,7 @@ class DrawingView: UIView {
 }
 
 class DrawController: UIViewController {
-    @IBOutlet private weak var drawingView: DrawingView!
+    @IBOutlet private weak var canvas: CanvasView!
     private var toolsHelper: ToolsHelper!
     
     private var items: [DrawItem] = []
@@ -42,9 +42,14 @@ class DrawController: UIViewController {
         toolsHelper = ToolsHelper(owner: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        let location = touch.location(in: drawingView)
+        let location = touch.location(in: canvas)
         let path = UIBezierPath()
         path.move(to: location)
         currentItem = DrawItem(path: path, fillColor: UIColor.black.withAlphaComponent(0.7), strokeColor: UIColor.black.withAlphaComponent(0.7))
@@ -53,14 +58,14 @@ class DrawController: UIViewController {
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        let location = touch.location(in: drawingView)
+        let location = touch.location(in: canvas)
         currentItem?.path.addLine(to: location)
         updateItems()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        let location = touch.location(in: drawingView)
+        let location = touch.location(in: canvas)
         currentItem?.path.addLine(to: location)
         if let itemToSave = currentItem {
             items.append(itemToSave)
@@ -76,7 +81,7 @@ class DrawController: UIViewController {
     }
     
     private func updateItems() {
-        drawingView.items = (items + [currentItem]).compactMap { $0 }
+        canvas.items = (items + [currentItem]).compactMap { $0 }
     }
     
     @IBAction private func clearPressed() {
@@ -86,6 +91,17 @@ class DrawController: UIViewController {
     
     @IBAction private func editPressed() {
         toolsHelper.becomeFirstResponder()
+    }
+    
+    @IBAction private func pinchAppeared(_ recognizer: UIPinchGestureRecognizer) {
+        let originalScale = recognizer.scale
+        let scale = 1 - (1 - originalScale) / 30
+        let pinchCenter = recognizer.location(in: view)
+        let targetSize = CGSize(width: canvas.frame.width * scale, height: canvas.frame.height * scale)
+        let targetOrigin = CGPoint(x: pinchCenter.x - targetSize.width / 2, y: pinchCenter.y - targetSize.height / 2)
+        canvas.frame = CGRect(origin: targetOrigin, size: targetSize)
+        canvas.items.forEach { $0.path.apply(.init(scaleX: scale, y: scale)) }
+        updateItems()
     }
 }
 

@@ -34,9 +34,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC" customClass="DrawingView" customModule="Phlogiston" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC" customClass="CanvasView" customModule="Phlogiston" customModuleProvider="target">
+                                <rect key="frame" x="6" y="91" width="402" height="714"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="9:16" id="fcM-u5-sXH"/>
+                                </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmS-Hj-q1M">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
@@ -54,25 +57,33 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="gdD-v3-8QM" firstAttribute="trailing" secondItem="qmS-Hj-q1M" secondAttribute="trailing" id="1Rx-Z6-faB"/>
-                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="leading" secondItem="rta-Tl-CAG" secondAttribute="leading" id="Atx-9I-isv"/>
+                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="width" secondItem="rta-Tl-CAG" secondAttribute="width" multiplier="0.97" priority="250" id="69o-by-Rci"/>
+                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="centerY" secondItem="rta-Tl-CAG" secondAttribute="centerY" id="8Vj-gZ-iNw"/>
+                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="centerX" secondItem="rta-Tl-CAG" secondAttribute="centerX" id="9dH-QF-afC"/>
                             <constraint firstItem="gdD-v3-8QM" firstAttribute="bottom" secondItem="qmS-Hj-q1M" secondAttribute="bottom" id="aZ0-Ji-F0L"/>
-                            <constraint firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="bZT-3O-Kin"/>
                             <constraint firstItem="qmS-Hj-q1M" firstAttribute="leading" secondItem="gdD-v3-8QM" secondAttribute="leading" id="or7-7u-1wA"/>
-                            <constraint firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="t7T-en-Jhb"/>
-                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="top" secondItem="rta-Tl-CAG" secondAttribute="top" id="vCc-Lq-Ura"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gdD-v3-8QM"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QCG-SJ-Ugg" appends="YES" id="jq4-TW-gsK"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="MYO-SX-GV7"/>
                     <connections>
-                        <outlet property="drawingView" destination="8bC-Xf-vdC" id="1v8-6q-VfG"/>
+                        <outlet property="canvas" destination="8bC-Xf-vdC" id="1v8-6q-VfG"/>
                         <outlet property="view" destination="rta-Tl-CAG" id="Y5B-yV-ZZn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="QCG-SJ-Ugg">
+                    <connections>
+                        <action selector="pinchAppeared:" destination="BYZ-38-t0r" id="mZs-pb-jYH"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-365" y="-48"/>
         </scene>
