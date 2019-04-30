@@ -42,16 +42,22 @@
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmS-Hj-q1M">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="3tu-RS-7gu">
                                         <connections>
                                             <action selector="clearPressed" destination="BYZ-38-t0r" id="a1p-CZ-XqK"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="edit" id="1Ue-go-EIb">
+                                    <barButtonItem title="toolbox" image="toolbox" id="1Ue-go-EIb">
                                         <connections>
                                             <action selector="editPressed" destination="BYZ-38-t0r" id="nTf-47-c5W"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AWw-Db-dI8"/>
+                                    <barButtonItem systemItem="action" id="jb8-05-GxR">
+                                        <connections>
+                                            <action selector="actionPressed" destination="BYZ-38-t0r" id="COz-Yu-LBV"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -87,5 +93,63 @@
             </objects>
             <point key="canvasLocation" x="-365" y="-48"/>
         </scene>
+        <!--Tool Controller-->
+        <scene sceneID="gIa-8h-QfO">
+            <objects>
+                <viewController storyboardIdentifier="ToolController" id="ZTl-S6-mAy" customClass="ToolController" customModule="Phlogiston" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UKX-2y-vcX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WT2-ne-leF">
+                                <rect key="frame" x="86" y="56" width="310" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T40-I1-LvD">
+                                <rect key="frame" x="88" y="105" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="alpha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5j-3T-Is3">
+                                <rect key="frame" x="20" y="60" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="withfill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQg-mv-9ji">
+                                <rect key="frame" x="20" y="110" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXg-49-5Qp">
+                                <rect key="frame" x="20" y="174" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1kn-Sh-Zlt">
+                                <rect key="frame" x="86" y="166" width="310" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28000682332131321" green="0.72844322894153435" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="bDK-ke-OA8"/>
+                    </view>
+                    <connections>
+                        <outlet property="alphaSlider" destination="WT2-ne-leF" id="BUn-MP-BlB"/>
+                        <outlet property="hueSlider" destination="1kn-Sh-Zlt" id="eDa-F1-Yb0"/>
+                        <outlet property="withFillSwitch" destination="T40-I1-LvD" id="7vJ-QX-H49"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DaZ-tf-ewz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640.57971014492762" y="58.258928571428569"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="toolbox" width="50" height="50"/>
+    </resources>
 </document>

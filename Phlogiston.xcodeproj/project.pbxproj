@@ -13,6 +13,7 @@
 		A038F3D92276F0E6001B6F74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A038F3D82276F0E6001B6F74 /* Assets.xcassets */; };
 		A038F3DC2276F0E6001B6F74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038F3DA2276F0E6001B6F74 /* LaunchScreen.storyboard */; };
 		A07D43C9227868D10099415F /* NSLayoutConstraint_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */; };
+		A07D43CB227876E30099415F /* ToolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D43CA227876E30099415F /* ToolController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A038F3DB2276F0E6001B6F74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A038F3DD2276F0E6001B6F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint_ext.swift; sourceTree = "<group>"; };
+		A07D43CA227876E30099415F /* ToolController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +59,23 @@
 			isa = PBXGroup;
 			children = (
 				A038F3D12276F0E4001B6F74 /* AppDelegate.swift */,
-				A038F3D32276F0E4001B6F74 /* DrawController.swift */,
 				A038F3D52276F0E4001B6F74 /* Main.storyboard */,
+				A07D43CC227877990099415F /* ViewControllers */,
 				A038F3D82276F0E6001B6F74 /* Assets.xcassets */,
 				A038F3DA2276F0E6001B6F74 /* LaunchScreen.storyboard */,
 				A038F3DD2276F0E6001B6F74 /* Info.plist */,
 				A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */,
 			);
 			path = Phlogiston;
+			sourceTree = "<group>";
+		};
+		A07D43CC227877990099415F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A038F3D32276F0E4001B6F74 /* DrawController.swift */,
+				A07D43CA227876E30099415F /* ToolController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07D43C9227868D10099415F /* NSLayoutConstraint_ext.swift in Sources */,
+				A07D43CB227876E30099415F /* ToolController.swift in Sources */,
 				A038F3D42276F0E4001B6F74 /* DrawController.swift in Sources */,
 				A038F3D22276F0E4001B6F74 /* AppDelegate.swift in Sources */,
 			);

@@ -32,14 +32,15 @@ class CanvasView: UIView {
 
 class DrawController: UIViewController {
     @IBOutlet private weak var canvas: CanvasView!
-    private var toolsHelper: ToolsHelper!
+
+    private var toolController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ToolController") as! ToolController
     
     private var items: [DrawItem] = []
     private var currentItem: DrawItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        toolsHelper = ToolsHelper(owner: self)
+        toolController.drawController = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +91,13 @@ class DrawController: UIViewController {
     }
     
     @IBAction private func editPressed() {
-        toolsHelper.becomeFirstResponder()
+        toolController.becomeFirstResponder()
+    }
+    
+    @IBAction private func actionPressed() {
+        let imageToShare = UIGraphicsImageRenderer(size: canvas.frame.size).image { canvas.layer.render(in: $0.cgContext) }
+        let activityVC = UIActivityViewController(activityItems: [imageToShare], applicationActivities: nil)
+        present(activityVC, animated: true, completion: nil)
     }
     
     @IBAction private func pinchAppeared(_ recognizer: UIPinchGestureRecognizer) {
@@ -103,39 +110,4 @@ class DrawController: UIViewController {
         canvas.items.forEach { $0.path.apply(.init(scaleX: scale, y: scale)) }
         updateItems()
     }
-}
-
-class ToolsHelper: UIResponder {
-    private let view = UIView()
-    private var owner: UIResponder?
-    
-    convenience init(owner: UIResponder?) {
-        self.init()
-        self.owner = owner
-    }
-    
-    override init() {
-        super.init()
-        view.frame = CGRect(origin: .zero, size: CGSize(width: 0, height: 400))
-        view.backgroundColor = .red
-        let label = UILabel()
-        label.text = "test"
-        view.addSubview(label)
-    }
-    
-    override var inputView: UIView? {
-        return view
-    }
-    
-    override var inputAccessoryView: UIView? {
-        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: 44)))
-        toolbar.setItems([UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(resignFirstResponder))], animated: false)
-        return toolbar
-    }
-    
-    override var canBecomeFirstResponder: Bool {
-        return owner != nil
-    }
-    
-    override var next: UIResponder? { return owner }
 }

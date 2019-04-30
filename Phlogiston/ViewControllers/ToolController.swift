@@ -1,0 +1,27 @@
+//
+//  ToolController.swift
+//  Phlogiston
+//
+//  Created by Лысенко Алексей Димитриевич on 30/04/2019.
+//  Copyright © 2019 Syrup Media Group. All rights reserved.
+//
+
+import UIKit
+
+class ToolController: UIViewController {
+    @IBOutlet private weak var alphaSlider: UISlider!
+    @IBOutlet private weak var withFillSwitch: UISwitch!
+    @IBOutlet private weak var hueSlider: UISlider!
+    
+    weak var drawController: DrawController?
+
+    override var canBecomeFirstResponder: Bool { return true }
+    override var inputView: UIView? { return view }
+    override var inputAccessoryView: UIView? {
+        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: 44)))
+        toolbar.setItems([UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(resignFirstResponder))], animated: false)
+        return toolbar
+    }
+    
+    override var next: UIResponder? { return drawController }
+}
