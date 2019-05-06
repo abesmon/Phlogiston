@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D2947030B236C5FFCB4095A /* Pods_Phlogiston.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84076FD1EA236338E27ACA46 /* Pods_Phlogiston.framework */; };
 		A038F3D22276F0E4001B6F74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038F3D12276F0E4001B6F74 /* AppDelegate.swift */; };
 		A038F3D42276F0E4001B6F74 /* DrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038F3D32276F0E4001B6F74 /* DrawController.swift */; };
 		A038F3D72276F0E4001B6F74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038F3D52276F0E4001B6F74 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84076FD1EA236338E27ACA46 /* Pods_Phlogiston.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phlogiston.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A038F3CE2276F0E4001B6F74 /* Phlogiston.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phlogiston.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A038F3D12276F0E4001B6F74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A038F3D32276F0E4001B6F74 /* DrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawController.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		A038F3DD2276F0E6001B6F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint_ext.swift; sourceTree = "<group>"; };
 		A07D43CA227876E30099415F /* ToolController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolController.swift; sourceTree = "<group>"; };
+		B8A0BF57D9F8F0A1A9710FFD /* Pods-Phlogiston.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlogiston.release.xcconfig"; path = "Target Support Files/Pods-Phlogiston/Pods-Phlogiston.release.xcconfig"; sourceTree = "<group>"; };
+		F3AA4738D298C799DEF79E65 /* Pods-Phlogiston.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlogiston.debug.xcconfig"; path = "Target Support Files/Pods-Phlogiston/Pods-Phlogiston.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D2947030B236C5FFCB4095A /* Pods_Phlogiston.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15C6646828D72E320B4C2F94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84076FD1EA236338E27ACA46 /* Pods_Phlogiston.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A038F3C52276F0E4001B6F74 = {
 			isa = PBXGroup;
 			children = (
 				A038F3D02276F0E4001B6F74 /* Phlogiston */,
 				A038F3CF2276F0E4001B6F74 /* Products */,
+				ABBB0613D2C510912D45FAFF /* Pods */,
+				15C6646828D72E320B4C2F94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +93,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		ABBB0613D2C510912D45FAFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3AA4738D298C799DEF79E65 /* Pods-Phlogiston.debug.xcconfig */,
+				B8A0BF57D9F8F0A1A9710FFD /* Pods-Phlogiston.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,10 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A038F3E02276F0E6001B6F74 /* Build configuration list for PBXNativeTarget "Phlogiston" */;
 			buildPhases = (
+				0C27AF00342F4C9DEF6D748E /* [CP] Check Pods Manifest.lock */,
 				A07D43CD22789AC20099415F /* ShellScript */,
 				A038F3CA2276F0E4001B6F74 /* Sources */,
 				A038F3CB2276F0E4001B6F74 /* Frameworks */,
 				A038F3CC2276F0E4001B6F74 /* Resources */,
+				B45D40214A36E303F949CAF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,6 +172,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0C27AF00342F4C9DEF6D748E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Phlogiston-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A07D43CD22789AC20099415F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +210,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nMY_BUILD_NUMBER=$(git rev-list HEAD | wc -l | tr -d ' ')\necho $MY_BUILD_NUMBER\n";
+		};
+		B45D40214A36E303F949CAF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Phlogiston/Pods-Phlogiston-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Phlogiston/Pods-Phlogiston-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -317,6 +387,7 @@
 		};
 		A038F3E12276F0E6001B6F74 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3AA4738D298C799DEF79E65 /* Pods-Phlogiston.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -336,6 +407,7 @@
 		};
 		A038F3E22276F0E6001B6F74 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8A0BF57D9F8F0A1A9710FFD /* Pods-Phlogiston.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

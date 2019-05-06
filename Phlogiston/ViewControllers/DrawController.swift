@@ -16,40 +16,13 @@ struct DrawingTool {
     static let base = DrawingTool(fillColor: .black, strokeColor: .black, lineWidth: 1)
 }
 
-struct DrawItem {
-    var path: UIBezierPath
-    var tool: DrawingTool
-}
-
-class CanvasView: UIView {
-    var items: [DrawItem] = [] {
-        didSet { setNeedsDisplay() }
-    }
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        items.forEach { item in
-            item.path.lineWidth = item.tool.lineWidth
-            if let fillColor = item.tool.fillColor {
-                fillColor.setFill()
-                item.path.fill(with: .normal, alpha: fillColor.cgColor.alpha)
-            }
-            if let strokeColor = item.tool.strokeColor {
-                strokeColor.setStroke()
-                item.path.stroke(with: .normal, alpha: strokeColor.cgColor.alpha)
-            }
-        }
-    }
-}
-
 class DrawController: UIViewController {
-    @IBOutlet private weak var canvas: CanvasView!
+    @IBOutlet private weak var canvas: UIView!
 
     private var toolController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ToolController") as! ToolController
     
     private var drawingTool: DrawingTool = .base
-    private var items: [DrawItem] = []
-    private var currentItem: DrawItem?
+    private var currentPath: UIBezierPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,46 +37,50 @@ class DrawController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.location(in: canvas)
-        let path = UIBezierPath()
-        path.move(to: location)
-        currentItem = DrawItem(path: path, tool: drawingTool)
-        updateItems()
+        
+        currentPath = UIBezierPath()
+        currentPath?.move(to: location)
+        
+        let shLayer = CAShapeLayer()
+        shLayer.fillColor = drawingTool.fillColor?.cgColor
+        shLayer.strokeColor = drawingTool.strokeColor?.cgColor
+        shLayer.lineWidth = drawingTool.lineWidth
+        canvas.layer.addSublayer(shLayer)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.location(in: canvas)
-        currentItem?.path.addLine(to: location)
-        updateItems()
+        
+        guard let currentPath = self.currentPath,
+            let shLayer = canvas.layer.sublayers?.last as? CAShapeLayer else { return }
+        currentPath.addLine(to: location)
+        shLayer.path = currentPath.cgPath
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.location(in: canvas)
-        currentItem?.path.addLine(to: location)
-        if let itemToSave = currentItem {
-            items.append(itemToSave)
-        }
-        currentItem = nil
-        updateItems()
         
+        guard let currentPath = self.currentPath,
+            let shLayer = canvas.layer.sublayers?.last as? CAShapeLayer else { return }
+        currentPath.addLine(to: location)
+        shLayer.path = currentPath.cgPath
+        
+        self.currentPath = nil
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        currentItem = nil
-        updateItems()
-    }
-    
-    private func updateItems() {
-        canvas.items = (items + [currentItem]).compactMap { $0 }
+        currentPath = nil
+        canvas.layer.sublayers?.last?.removeFromSuperlayer()
     }
     
     @IBAction private func clearPressed() {
-        items = []
-        updateItems()
+        canvas.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
     }
     
     @IBAction private func editPressed() {
+        toolController.drawingTool = drawingTool
         toolController.becomeFirstResponder()
     }
     
@@ -113,15 +90,36 @@ class DrawController: UIViewController {
         present(activityVC, animated: true, completion: nil)
     }
     
+    var originalRect: CGRect = .zero
+    var originalScale: CGFloat = 1
+    var lastScale: CGFloat = 1
+    var currentScale: CGFloat = 1 {
+        didSet { canvas.layer.setAffineTransform(.init(scaleX: currentScale, y: currentScale)) }
+    }
     @IBAction private func pinchAppeared(_ recognizer: UIPinchGestureRecognizer) {
-        let originalScale = recognizer.scale
-        let scale = 1 - (1 - originalScale) / 30
-        let pinchCenter = recognizer.location(in: view)
-        let targetSize = CGSize(width: canvas.frame.width * scale, height: canvas.frame.height * scale)
-        let targetOrigin = CGPoint(x: pinchCenter.x - targetSize.width / 2, y: pinchCenter.y - targetSize.height / 2)
-        canvas.frame = CGRect(origin: targetOrigin, size: targetSize)
-        canvas.items.forEach { $0.path.apply(.init(scaleX: scale, y: scale)) }
-        updateItems()
+        switch recognizer.state {
+        case .began:
+            originalRect = canvas.frame
+        case .changed:
+            lastScale = recognizer.scale
+            let pinchCenter = recognizer.location(in: view)
+            let targetSize = CGSize(width: originalRect.size.width * lastScale, height: originalRect.size.height * lastScale)
+            let targetOrigin = CGPoint(x: pinchCenter.x - targetSize.width / 2, y: pinchCenter.y - targetSize.height / 2)
+            currentScale = originalScale * lastScale
+            canvas.frame = CGRect(origin: targetOrigin, size: targetSize)
+        case .ended:
+            originalRect = canvas.frame
+            currentScale = originalScale * lastScale
+            originalScale = currentScale
+        case .cancelled, .failed:
+            canvas.frame = originalRect
+            currentScale = originalScale
+        case .possible:
+            ()
+        @unknown default:
+            ()
+        }
+        
     }
 }
 
