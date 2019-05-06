@@ -110,7 +110,7 @@
 			buildConfigurationList = A038F3E02276F0E6001B6F74 /* Build configuration list for PBXNativeTarget "Phlogiston" */;
 			buildPhases = (
 				0C27AF00342F4C9DEF6D748E /* [CP] Check Pods Manifest.lock */,
-				A07D43CD22789AC20099415F /* ShellScript */,
+				A07D43CD22789AC20099415F /* build-bumper */,
 				A038F3CA2276F0E4001B6F74 /* Sources */,
 				A038F3CB2276F0E4001B6F74 /* Frameworks */,
 				A038F3CC2276F0E4001B6F74 /* Resources */,
@@ -194,7 +194,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A07D43CD22789AC20099415F /* ShellScript */ = {
+		A07D43CD22789AC20099415F /* build-bumper */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -203,13 +203,14 @@
 			);
 			inputPaths = (
 			);
+			name = "build-bumper";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nMY_BUILD_NUMBER=$(git rev-list HEAD | wc -l | tr -d ' ')\necho $MY_BUILD_NUMBER\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${SRCROOT}/build-bumper.sh\n";
 		};
 		B45D40214A36E303F949CAF9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
