@@ -16,7 +16,7 @@
 		A07D43C9227868D10099415F /* NSLayoutConstraint_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */; };
 		A07D43CB227876E30099415F /* ToolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D43CA227876E30099415F /* ToolController.swift */; };
 		A0BAF16222808C5C009C1E89 /* PhlogistonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAF16122808C5C009C1E89 /* PhlogistonUITests.swift */; };
-		A0BAF16A22808C77009C1E89 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAF16922808C77009C1E89 /* SnapshotHelper.swift */; };
+		A0DE56612281867F008ECDCF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE56602281867F008ECDCF /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,9 @@
 		A0BAF15F22808C5C009C1E89 /* PhlogistonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhlogistonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BAF16122808C5C009C1E89 /* PhlogistonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhlogistonUITests.swift; sourceTree = "<group>"; };
 		A0BAF16322808C5C009C1E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0BAF16922808C77009C1E89 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		A0DE56602281867F008ECDCF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		A0DE5663228186A6008ECDCF /* Snapfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Snapfile; sourceTree = "<group>"; };
+		A0DE5664228186B6008ECDCF /* build-bumper.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-bumper.sh"; sourceTree = "<group>"; };
 		B8A0BF57D9F8F0A1A9710FFD /* Pods-Phlogiston.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlogiston.release.xcconfig"; path = "Target Support Files/Pods-Phlogiston/Pods-Phlogiston.release.xcconfig"; sourceTree = "<group>"; };
 		F3AA4738D298C799DEF79E65 /* Pods-Phlogiston.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlogiston.debug.xcconfig"; path = "Target Support Files/Pods-Phlogiston/Pods-Phlogiston.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 		A038F3C52276F0E4001B6F74 = {
 			isa = PBXGroup;
 			children = (
+				A0DE566222818696008ECDCF /* Tools */,
 				A038F3D02276F0E4001B6F74 /* Phlogiston */,
 				A0BAF16022808C5C009C1E89 /* PhlogistonUITests */,
 				A038F3CF2276F0E4001B6F74 /* Products */,
@@ -121,11 +124,20 @@
 		A0BAF16022808C5C009C1E89 /* PhlogistonUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A0BAF16922808C77009C1E89 /* SnapshotHelper.swift */,
+				A0DE56602281867F008ECDCF /* SnapshotHelper.swift */,
 				A0BAF16122808C5C009C1E89 /* PhlogistonUITests.swift */,
 				A0BAF16322808C5C009C1E89 /* Info.plist */,
 			);
 			path = PhlogistonUITests;
+			sourceTree = "<group>";
+		};
+		A0DE566222818696008ECDCF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A0DE5664228186B6008ECDCF /* build-bumper.sh */,
+				A0DE5663228186A6008ECDCF /* Snapfile */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 		ABBB0613D2C510912D45FAFF /* Pods */ = {
@@ -318,7 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0BAF16222808C5C009C1E89 /* PhlogistonUITests.swift in Sources */,
-				A0BAF16A22808C77009C1E89 /* SnapshotHelper.swift in Sources */,
+				A0DE56612281867F008ECDCF /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

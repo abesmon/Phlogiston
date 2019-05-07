@@ -43,14 +43,14 @@
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmS-Hj-q1M">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="3tu-RS-7gu">
                                         <connections>
                                             <action selector="clearPressed" destination="BYZ-38-t0r" id="a1p-CZ-XqK"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="toolbox" image="toolbox" id="1Ue-go-EIb">
+                                    <barButtonItem title="toolbox" image="icon-toolbox" id="1Ue-go-EIb">
                                         <connections>
                                             <action selector="editPressed" destination="BYZ-38-t0r" id="nTf-47-c5W"/>
                                         </connections>
@@ -164,6 +164,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="toolbox" width="50" height="50"/>
+        <image name="icon-toolbox" width="25" height="20"/>
     </resources>
 </document>

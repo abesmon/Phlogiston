@@ -13,7 +13,7 @@ struct DrawingTool {
     var strokeColor: UIColor?
     var lineWidth: CGFloat = 1
     
-    static let base = DrawingTool(fillColor: .black, strokeColor: .black, lineWidth: 1)
+    static let base = DrawingTool(fillColor: UIColor(hue: 1, saturation: 1, brightness: 0, alpha: 1), strokeColor: UIColor(hue: 1, saturation: 1, brightness: 0, alpha: 1), lineWidth: 1)
 }
 
 class DrawController: UIViewController {
