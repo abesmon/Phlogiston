@@ -83,84 +83,22 @@
                     <connections>
                         <outlet property="canvas" destination="8bC-Xf-vdC" id="1v8-6q-VfG"/>
                         <outlet property="view" destination="rta-Tl-CAG" id="Y5B-yV-ZZn"/>
+                        <outlet property="zoomController" destination="C5W-JQ-og2" id="GWh-cV-wmm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="C5W-JQ-og2" customClass="ZoomController" customModule="Phlogiston" customModuleProvider="target">
+                    <connections>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="qs4-r0-ohH"/>
+                    </connections>
+                </customObject>
                 <pinchGestureRecognizer id="QCG-SJ-Ugg">
                     <connections>
-                        <action selector="pinchAppeared:" destination="BYZ-38-t0r" id="mZs-pb-jYH"/>
+                        <action selector="pinchAppeared:" destination="C5W-JQ-og2" id="aPa-rz-86m"/>
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-365" y="-48"/>
-        </scene>
-        <!--Tool Controller-->
-        <scene sceneID="gIa-8h-QfO">
-            <objects>
-                <viewController storyboardIdentifier="ToolController" id="ZTl-S6-mAy" customClass="ToolController" customModule="Phlogiston" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UKX-2y-vcX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggK-qa-fw0" customClass="ChromaColorPicker" customModule="ChromaColorPicker">
-                                <rect key="frame" x="0.0" y="44" width="300" height="222"/>
-                                <connections>
-                                    <action selector="chromaChanged" destination="ZTl-S6-mAy" eventType="valueChanged" id="JSw-uo-0ir"/>
-                                </connections>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ACr-pz-p81">
-                                <rect key="frame" x="308" y="44" width="98" height="222"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcf-HS-Dp1">
-                                        <rect key="frame" x="0.0" y="0.0" width="98" height="55.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="be9-RM-ILh">
-                                        <rect key="frame" x="-2" y="55.5" width="102" height="56.5"/>
-                                        <connections>
-                                            <action selector="alphaSliderChanged" destination="ZTl-S6-mAy" eventType="valueChanged" id="IhI-94-rXr"/>
-                                        </connections>
-                                    </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With FIll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BF2-57-Azs">
-                                        <rect key="frame" x="0.0" y="111" width="98" height="55.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOo-6w-gub">
-                                        <rect key="frame" x="0.0" y="166.5" width="100" height="55.5"/>
-                                        <connections>
-                                            <action selector="withFillSwitchChanged" destination="ZTl-S6-mAy" eventType="valueChanged" id="JYz-qy-Eck"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="ACr-pz-p81" firstAttribute="leading" secondItem="ggK-qa-fw0" secondAttribute="trailing" constant="8" id="07W-V5-NbS"/>
-                            <constraint firstItem="bDK-ke-OA8" firstAttribute="trailing" secondItem="ACr-pz-p81" secondAttribute="trailing" constant="8" id="Myg-kE-lNs"/>
-                            <constraint firstItem="ggK-qa-fw0" firstAttribute="top" secondItem="bDK-ke-OA8" secondAttribute="top" id="O4e-C7-Yn3"/>
-                            <constraint firstItem="ggK-qa-fw0" firstAttribute="leading" secondItem="bDK-ke-OA8" secondAttribute="leading" id="Se5-AG-Pgr"/>
-                            <constraint firstItem="ggK-qa-fw0" firstAttribute="width" secondItem="UKX-2y-vcX" secondAttribute="height" id="Yz7-xj-gfT"/>
-                            <constraint firstItem="ACr-pz-p81" firstAttribute="top" secondItem="bDK-ke-OA8" secondAttribute="top" id="fh6-qP-HW7"/>
-                            <constraint firstItem="bDK-ke-OA8" firstAttribute="bottom" secondItem="ACr-pz-p81" secondAttribute="bottom" id="gUw-P0-1Ty"/>
-                            <constraint firstItem="bDK-ke-OA8" firstAttribute="bottom" secondItem="ggK-qa-fw0" secondAttribute="bottom" id="nP4-We-T3f"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="bDK-ke-OA8"/>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="300"/>
-                    <connections>
-                        <outlet property="alphaSlider" destination="be9-RM-ILh" id="Jtj-rl-SdY"/>
-                        <outlet property="chromaPicker" destination="ggK-qa-fw0" id="DFc-kb-p6O"/>
-                        <outlet property="withFillSwitch" destination="sOo-6w-gub" id="ebY-oZ-88S"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DaZ-tf-ewz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="978" y="2"/>
         </scene>
     </scenes>
     <resources>

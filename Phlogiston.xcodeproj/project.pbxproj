@@ -17,6 +17,11 @@
 		A07D43CB227876E30099415F /* ToolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D43CA227876E30099415F /* ToolController.swift */; };
 		A0BAF16222808C5C009C1E89 /* PhlogistonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAF16122808C5C009C1E89 /* PhlogistonUITests.swift */; };
 		A0DE56612281867F008ECDCF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE56602281867F008ECDCF /* SnapshotHelper.swift */; };
+		A0DE56672281A470008ECDCF /* DrawProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE56662281A470008ECDCF /* DrawProcessor.swift */; };
+		A0DE56692281A484008ECDCF /* CoreProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE56682281A484008ECDCF /* CoreProcessor.swift */; };
+		A0DE566C2281A55D008ECDCF /* ZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE566B2281A55D008ECDCF /* ZoomController.swift */; };
+		A0DE566E2281A5D2008ECDCF /* DrawingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE566D2281A5D2008ECDCF /* DrawingTool.swift */; };
+		A0DE56702281A639008ECDCF /* ToolController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DE566F2281A639008ECDCF /* ToolController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		A0DE56602281867F008ECDCF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		A0DE5663228186A6008ECDCF /* Snapfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Snapfile; sourceTree = "<group>"; };
 		A0DE5664228186B6008ECDCF /* build-bumper.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-bumper.sh"; sourceTree = "<group>"; };
+		A0DE56662281A470008ECDCF /* DrawProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawProcessor.swift; sourceTree = "<group>"; };
+		A0DE56682281A484008ECDCF /* CoreProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreProcessor.swift; sourceTree = "<group>"; };
+		A0DE566B2281A55D008ECDCF /* ZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomController.swift; sourceTree = "<group>"; };
+		A0DE566D2281A5D2008ECDCF /* DrawingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTool.swift; sourceTree = "<group>"; };
+		A0DE566F2281A639008ECDCF /* ToolController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolController.xib; sourceTree = "<group>"; };
 		B8A0BF57D9F8F0A1A9710FFD /* Pods-Phlogiston.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlogiston.release.xcconfig"; path = "Target Support Files/Pods-Phlogiston/Pods-Phlogiston.release.xcconfig"; sourceTree = "<group>"; };
 		F3AA4738D298C799DEF79E65 /* Pods-Phlogiston.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlogiston.debug.xcconfig"; path = "Target Support Files/Pods-Phlogiston/Pods-Phlogiston.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,9 +111,11 @@
 		A038F3D02276F0E4001B6F74 /* Phlogiston */ = {
 			isa = PBXGroup;
 			children = (
+				A0DE566A2281A553008ECDCF /* Domain */,
+				A0DE56652281A43F008ECDCF /* DrawProcessors */,
+				A07D43CC227877990099415F /* ViewControllers */,
 				A038F3D12276F0E4001B6F74 /* AppDelegate.swift */,
 				A038F3D52276F0E4001B6F74 /* Main.storyboard */,
-				A07D43CC227877990099415F /* ViewControllers */,
 				A038F3D82276F0E6001B6F74 /* Assets.xcassets */,
 				A038F3DA2276F0E6001B6F74 /* LaunchScreen.storyboard */,
 				A038F3DD2276F0E6001B6F74 /* Info.plist */,
@@ -117,6 +129,7 @@
 			children = (
 				A038F3D32276F0E4001B6F74 /* DrawController.swift */,
 				A07D43CA227876E30099415F /* ToolController.swift */,
+				A0DE566F2281A639008ECDCF /* ToolController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -138,6 +151,24 @@
 				A0DE5663228186A6008ECDCF /* Snapfile */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		A0DE56652281A43F008ECDCF /* DrawProcessors */ = {
+			isa = PBXGroup;
+			children = (
+				A0DE56662281A470008ECDCF /* DrawProcessor.swift */,
+				A0DE56682281A484008ECDCF /* CoreProcessor.swift */,
+			);
+			path = DrawProcessors;
+			sourceTree = "<group>";
+		};
+		A0DE566A2281A553008ECDCF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A0DE566B2281A55D008ECDCF /* ZoomController.swift */,
+				A0DE566D2281A5D2008ECDCF /* DrawingTool.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		ABBB0613D2C510912D45FAFF /* Pods */ = {
@@ -234,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A038F3DC2276F0E6001B6F74 /* LaunchScreen.storyboard in Resources */,
+				A0DE56702281A639008ECDCF /* ToolController.xib in Resources */,
 				A038F3D92276F0E6001B6F74 /* Assets.xcassets in Resources */,
 				A038F3D72276F0E4001B6F74 /* Main.storyboard in Resources */,
 			);
@@ -319,8 +351,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07D43C9227868D10099415F /* NSLayoutConstraint_ext.swift in Sources */,
+				A0DE566C2281A55D008ECDCF /* ZoomController.swift in Sources */,
+				A0DE56692281A484008ECDCF /* CoreProcessor.swift in Sources */,
 				A07D43CB227876E30099415F /* ToolController.swift in Sources */,
+				A0DE56672281A470008ECDCF /* DrawProcessor.swift in Sources */,
 				A038F3D42276F0E4001B6F74 /* DrawController.swift in Sources */,
+				A0DE566E2281A5D2008ECDCF /* DrawingTool.swift in Sources */,
 				A038F3D22276F0E4001B6F74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
