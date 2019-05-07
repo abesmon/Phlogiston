@@ -24,7 +24,7 @@ class ZoomController: NSObject {
             originalRect = view.frame
         case .changed:
             lastScale = recognizer.scale
-            let pinchCenter = recognizer.location(in: view)
+            let pinchCenter = recognizer.location(in: recognizer.view)
             let targetSize = CGSize(width: originalRect.size.width * lastScale, height: originalRect.size.height * lastScale)
             let targetOrigin = CGPoint(x: pinchCenter.x - targetSize.width / 2, y: pinchCenter.y - targetSize.height / 2)
             currentScale = originalScale * lastScale
