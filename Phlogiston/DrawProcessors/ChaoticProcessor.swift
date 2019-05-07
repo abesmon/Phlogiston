@@ -1,5 +1,5 @@
 //
-//  CoreProcessor.swift
+//  ChaoticProcessor.swift
 //  Phlogiston
 //
 //  Created by Лысенко Алексей Димитриевич on 07/05/2019.
@@ -8,9 +8,13 @@
 
 import UIKit
 
-class CoreProcessor: DrawProcessor {
+class ChaoticProcessor: DrawProcessor {
     private var currentPath: UIBezierPath?
     var currentLayer: CALayer?
+    
+    private var chaosSteps: Int = 3
+    private var chaosForce: CGFloat = 50
+    private var curveChaosForce: CGFloat = 150
     
     func touchBegan(locationInCanvas: CGPoint, canvasLayer: CALayer, drawingTool: DrawingTool) {
         currentPath = UIBezierPath()
@@ -42,7 +46,16 @@ class CoreProcessor: DrawProcessor {
     private func proceed(locationInCanvas: CGPoint) {
         guard let currentPath = self.currentPath,
             let shLayer = currentLayer as? CAShapeLayer else { return }
-        currentPath.addLine(to: locationInCanvas)
+        let currentPoint = currentPath.currentPoint
+        let movementVector = CGSize(width: locationInCanvas.x - currentPoint.x, height: locationInCanvas.y - currentPoint.y)
+        (0..<chaosSteps).forEach { chaosStepIndex in
+            let x = (movementVector.width / CGFloat(chaosSteps)) * CGFloat(chaosStepIndex)
+            let y = (movementVector.height / CGFloat(chaosSteps)) * CGFloat(chaosStepIndex)
+            
+            let chaotedLocation = currentPoint.added(CGPoint(x: x, y: y)).added(.random(withForce: chaosForce))
+            let controlPoint = currentPoint.midInBetween(to: chaotedLocation).added(.random(withForce: curveChaosForce))
+            currentPath.addQuadCurve(to: chaotedLocation, controlPoint: controlPoint)
+        }
         shLayer.path = currentPath.cgPath
     }
     

@@ -13,7 +13,8 @@ class DrawController: UIViewController {
     @IBOutlet private var zoomController: ZoomController!
     
     private var toolController = ToolController()
-    private var currentProcessor: DrawProcessor = CoreProcessor()
+    private var drawingTool: DrawingTool = .base
+    private var currentProcessor: DrawProcessor = ChaoticProcessor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class DrawController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        currentProcessor.touchBegan(locationInCanvas: touch.location(in: canvas), canvasLayer: canvas.layer)
+        currentProcessor.touchBegan(locationInCanvas: touch.location(in: canvas), canvasLayer: canvas.layer, drawingTool: drawingTool)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -49,7 +50,7 @@ class DrawController: UIViewController {
     }
     
     @IBAction private func editPressed() {
-        toolController.drawingTool = currentProcessor.drawingTool
+        toolController.drawingTool = drawingTool
         toolController.becomeFirstResponder()
     }
     
@@ -62,6 +63,6 @@ class DrawController: UIViewController {
 
 extension DrawController: ToolControllerDelegate {
     func toolController(_ toolController: ToolController, didChangedDrawingTool drawingTool: DrawingTool) {
-        currentProcessor.drawingTool = drawingTool
+        self.drawingTool = drawingTool
     }
 }
