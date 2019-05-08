@@ -8,20 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		6D2947030B236C5FFCB4095A /* Pods_Phlogiston.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84076FD1EA236338E27ACA46 /* Pods_Phlogiston.framework */; };
+		A02ED6DB2283015C0027856B /* ToolboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02ED6DA2283015C0027856B /* ToolboxController.swift */; };
+		A02ED6DE228306320027856B /* ProcessorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02ED6DC228306320027856B /* ProcessorVC.swift */; };
+		A02ED6DF228306320027856B /* ProcessorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02ED6DD228306320027856B /* ProcessorVC.xib */; };
+		A02ED6E222831BE10027856B /* ChaoticProcessorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02ED6E022831BE10027856B /* ChaoticProcessorVC.swift */; };
+		A02ED6E322831BE10027856B /* ChaoticProcessorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02ED6E122831BE10027856B /* ChaoticProcessorVC.xib */; };
 		A038F3D22276F0E4001B6F74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038F3D12276F0E4001B6F74 /* AppDelegate.swift */; };
 		A038F3D42276F0E4001B6F74 /* DrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038F3D32276F0E4001B6F74 /* DrawController.swift */; };
 		A038F3D72276F0E4001B6F74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038F3D52276F0E4001B6F74 /* Main.storyboard */; };
 		A038F3D92276F0E6001B6F74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A038F3D82276F0E6001B6F74 /* Assets.xcassets */; };
 		A038F3DC2276F0E6001B6F74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A038F3DA2276F0E6001B6F74 /* LaunchScreen.storyboard */; };
 		A07D43C9227868D10099415F /* NSLayoutConstraint_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */; };
-		A07D43CB227876E30099415F /* ToolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D43CA227876E30099415F /* ToolController.swift */; };
+		A07D43CB227876E30099415F /* BrushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D43CA227876E30099415F /* BrushVC.swift */; };
 		A0BAF16222808C5C009C1E89 /* PhlogistonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAF16122808C5C009C1E89 /* PhlogistonUITests.swift */; };
 		A0DE56612281867F008ECDCF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE56602281867F008ECDCF /* SnapshotHelper.swift */; };
 		A0DE56672281A470008ECDCF /* DrawProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE56662281A470008ECDCF /* DrawProcessor.swift */; };
 		A0DE56692281A484008ECDCF /* CoreProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE56682281A484008ECDCF /* CoreProcessor.swift */; };
 		A0DE566C2281A55D008ECDCF /* ZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE566B2281A55D008ECDCF /* ZoomController.swift */; };
-		A0DE566E2281A5D2008ECDCF /* DrawingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE566D2281A5D2008ECDCF /* DrawingTool.swift */; };
-		A0DE56702281A639008ECDCF /* ToolController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DE566F2281A639008ECDCF /* ToolController.xib */; };
+		A0DE566E2281A5D2008ECDCF /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE566D2281A5D2008ECDCF /* Brush.swift */; };
+		A0DE56702281A639008ECDCF /* BrushVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DE566F2281A639008ECDCF /* BrushVC.xib */; };
 		A0DE56722281D203008ECDCF /* ChaoticProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE56712281D203008ECDCF /* ChaoticProcessor.swift */; };
 		A0DE56742281D21B008ECDCF /* CGPoint_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE56732281D21B008ECDCF /* CGPoint_ext.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +43,11 @@
 
 /* Begin PBXFileReference section */
 		84076FD1EA236338E27ACA46 /* Pods_Phlogiston.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phlogiston.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A02ED6DA2283015C0027856B /* ToolboxController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxController.swift; sourceTree = "<group>"; };
+		A02ED6DC228306320027856B /* ProcessorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessorVC.swift; sourceTree = "<group>"; };
+		A02ED6DD228306320027856B /* ProcessorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProcessorVC.xib; sourceTree = "<group>"; };
+		A02ED6E022831BE10027856B /* ChaoticProcessorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaoticProcessorVC.swift; sourceTree = "<group>"; };
+		A02ED6E122831BE10027856B /* ChaoticProcessorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChaoticProcessorVC.xib; sourceTree = "<group>"; };
 		A038F3CE2276F0E4001B6F74 /* Phlogiston.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phlogiston.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A038F3D12276F0E4001B6F74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A038F3D32276F0E4001B6F74 /* DrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawController.swift; sourceTree = "<group>"; };
@@ -46,7 +56,7 @@
 		A038F3DB2276F0E6001B6F74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A038F3DD2276F0E6001B6F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint_ext.swift; sourceTree = "<group>"; };
-		A07D43CA227876E30099415F /* ToolController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolController.swift; sourceTree = "<group>"; };
+		A07D43CA227876E30099415F /* BrushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushVC.swift; sourceTree = "<group>"; };
 		A0BAF15F22808C5C009C1E89 /* PhlogistonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhlogistonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BAF16122808C5C009C1E89 /* PhlogistonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhlogistonUITests.swift; sourceTree = "<group>"; };
 		A0BAF16322808C5C009C1E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,8 +66,8 @@
 		A0DE56662281A470008ECDCF /* DrawProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawProcessor.swift; sourceTree = "<group>"; };
 		A0DE56682281A484008ECDCF /* CoreProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreProcessor.swift; sourceTree = "<group>"; };
 		A0DE566B2281A55D008ECDCF /* ZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomController.swift; sourceTree = "<group>"; };
-		A0DE566D2281A5D2008ECDCF /* DrawingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTool.swift; sourceTree = "<group>"; };
-		A0DE566F2281A639008ECDCF /* ToolController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolController.xib; sourceTree = "<group>"; };
+		A0DE566D2281A5D2008ECDCF /* Brush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brush.swift; sourceTree = "<group>"; };
+		A0DE566F2281A639008ECDCF /* BrushVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrushVC.xib; sourceTree = "<group>"; };
 		A0DE56712281D203008ECDCF /* ChaoticProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaoticProcessor.swift; sourceTree = "<group>"; };
 		A0DE56732281D21B008ECDCF /* CGPoint_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint_ext.swift; sourceTree = "<group>"; };
 		B8A0BF57D9F8F0A1A9710FFD /* Pods-Phlogiston.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlogiston.release.xcconfig"; path = "Target Support Files/Pods-Phlogiston/Pods-Phlogiston.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,9 +140,12 @@
 		A07D43CC227877990099415F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A07D43CA227876E30099415F /* BrushVC.swift */,
+				A0DE566F2281A639008ECDCF /* BrushVC.xib */,
+				A02ED6DC228306320027856B /* ProcessorVC.swift */,
+				A02ED6DD228306320027856B /* ProcessorVC.xib */,
+				A02ED6DA2283015C0027856B /* ToolboxController.swift */,
 				A038F3D32276F0E4001B6F74 /* DrawController.swift */,
-				A07D43CA227876E30099415F /* ToolController.swift */,
-				A0DE566F2281A639008ECDCF /* ToolController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +175,8 @@
 				A0DE56662281A470008ECDCF /* DrawProcessor.swift */,
 				A0DE56682281A484008ECDCF /* CoreProcessor.swift */,
 				A0DE56712281D203008ECDCF /* ChaoticProcessor.swift */,
+				A02ED6E022831BE10027856B /* ChaoticProcessorVC.swift */,
+				A02ED6E122831BE10027856B /* ChaoticProcessorVC.xib */,
 			);
 			path = DrawProcessors;
 			sourceTree = "<group>";
@@ -170,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				A0DE566B2281A55D008ECDCF /* ZoomController.swift */,
-				A0DE566D2281A5D2008ECDCF /* DrawingTool.swift */,
+				A0DE566D2281A5D2008ECDCF /* Brush.swift */,
 				A0DE56732281D21B008ECDCF /* CGPoint_ext.swift */,
 				A07D43C8227868D10099415F /* NSLayoutConstraint_ext.swift */,
 			);
@@ -270,8 +285,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A02ED6DF228306320027856B /* ProcessorVC.xib in Resources */,
 				A038F3DC2276F0E6001B6F74 /* LaunchScreen.storyboard in Resources */,
-				A0DE56702281A639008ECDCF /* ToolController.xib in Resources */,
+				A0DE56702281A639008ECDCF /* BrushVC.xib in Resources */,
+				A02ED6E322831BE10027856B /* ChaoticProcessorVC.xib in Resources */,
 				A038F3D92276F0E6001B6F74 /* Assets.xcassets in Resources */,
 				A038F3D72276F0E4001B6F74 /* Main.storyboard in Resources */,
 			);
@@ -357,13 +374,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07D43C9227868D10099415F /* NSLayoutConstraint_ext.swift in Sources */,
+				A02ED6DE228306320027856B /* ProcessorVC.swift in Sources */,
 				A0DE566C2281A55D008ECDCF /* ZoomController.swift in Sources */,
+				A02ED6DB2283015C0027856B /* ToolboxController.swift in Sources */,
 				A0DE56692281A484008ECDCF /* CoreProcessor.swift in Sources */,
-				A07D43CB227876E30099415F /* ToolController.swift in Sources */,
+				A07D43CB227876E30099415F /* BrushVC.swift in Sources */,
 				A0DE56672281A470008ECDCF /* DrawProcessor.swift in Sources */,
 				A038F3D42276F0E4001B6F74 /* DrawController.swift in Sources */,
-				A0DE566E2281A5D2008ECDCF /* DrawingTool.swift in Sources */,
+				A0DE566E2281A5D2008ECDCF /* Brush.swift in Sources */,
 				A0DE56722281D203008ECDCF /* ChaoticProcessor.swift in Sources */,
+				A02ED6E222831BE10027856B /* ChaoticProcessorVC.swift in Sources */,
 				A0DE56742281D21B008ECDCF /* CGPoint_ext.swift in Sources */,
 				A038F3D22276F0E4001B6F74 /* AppDelegate.swift in Sources */,
 			);

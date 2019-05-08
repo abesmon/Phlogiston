@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToolController" customModule="Phlogiston" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BrushVC" customModule="Phlogiston" customModuleProvider="target">
             <connections>
                 <outlet property="alphaSlider" destination="sFs-LO-JXt" id="BnQ-4F-EST"/>
                 <outlet property="chromaPicker" destination="Hxj-LH-w9O" id="0fD-6s-7rT"/>
@@ -24,34 +24,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hxj-LH-w9O" customClass="ChromaColorPicker" customModule="ChromaColorPicker">
-                    <rect key="frame" x="0.0" y="44" width="336.5" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="341" height="102"/>
                     <connections>
                         <action selector="chromaChanged" destination="-1" eventType="valueChanged" id="A1r-gr-36I"/>
                     </connections>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xvJ-Kv-rD3">
-                    <rect key="frame" x="344.5" y="44" width="61.5" height="818"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xvJ-Kv-rD3">
+                    <rect key="frame" x="349" y="44" width="57" height="102"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a1-Um-cBf">
-                            <rect key="frame" x="0.0" y="0.0" width="61.5" height="204.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="57" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sFs-LO-JXt">
-                            <rect key="frame" x="-2" y="204.5" width="65.5" height="205.5"/>
+                            <rect key="frame" x="-2" y="20.5" width="61" height="31"/>
                             <connections>
                                 <action selector="alphaSliderChanged" destination="-1" eventType="valueChanged" id="yC0-iO-jyB"/>
                             </connections>
                         </slider>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With FIll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez5-tX-IQ0">
-                            <rect key="frame" x="0.0" y="409" width="61.5" height="204.5"/>
+                            <rect key="frame" x="0.0" y="50.5" width="57" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IyE-Kg-BCR">
-                            <rect key="frame" x="0.0" y="613.5" width="63.5" height="204.5"/>
+                            <rect key="frame" x="0.0" y="71" width="59" height="31"/>
                             <connections>
                                 <action selector="withFillSwitchChanged" destination="-1" eventType="valueChanged" id="9wm-G7-GUV"/>
                             </connections>
@@ -59,14 +59,15 @@
                     </subviews>
                 </stackView>
             </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Hxj-LH-w9O" firstAttribute="leading" secondItem="ATJ-AI-69E" secondAttribute="leading" id="29F-4I-VYp"/>
                 <constraint firstItem="xvJ-Kv-rD3" firstAttribute="leading" secondItem="Hxj-LH-w9O" secondAttribute="trailing" constant="8" id="3xz-1j-REY"/>
                 <constraint firstItem="Hxj-LH-w9O" firstAttribute="top" secondItem="ATJ-AI-69E" secondAttribute="top" id="6ET-EJ-PRB"/>
                 <constraint firstItem="ATJ-AI-69E" firstAttribute="bottom" secondItem="xvJ-Kv-rD3" secondAttribute="bottom" id="93k-YY-WLv"/>
                 <constraint firstItem="ATJ-AI-69E" firstAttribute="trailing" secondItem="xvJ-Kv-rD3" secondAttribute="trailing" constant="8" id="E5V-sf-9Ha"/>
-                <constraint firstItem="Hxj-LH-w9O" firstAttribute="width" secondItem="7CD-1K-Fkz" secondAttribute="height" id="PJD-AP-Hwe"/>
                 <constraint firstItem="xvJ-Kv-rD3" firstAttribute="top" secondItem="ATJ-AI-69E" secondAttribute="top" id="VWw-VS-1Ze"/>
+                <constraint firstItem="Hxj-LH-w9O" firstAttribute="width" secondItem="7CD-1K-Fkz" secondAttribute="height" id="on8-Zu-9yI"/>
                 <constraint firstItem="ATJ-AI-69E" firstAttribute="bottom" secondItem="Hxj-LH-w9O" secondAttribute="bottom" id="tR8-nN-HlL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ATJ-AI-69E"/>

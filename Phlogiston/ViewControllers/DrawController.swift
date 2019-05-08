@@ -12,13 +12,13 @@ class DrawController: UIViewController {
     @IBOutlet private weak var canvas: UIView!
     @IBOutlet private var zoomController: ZoomController!
     
-    private var toolController = ToolController()
-    private var drawingTool: DrawingTool = .base
-    private var currentProcessor: DrawProcessor = ChaoticProcessor()
+    private var toolboxController = ToolboxController()
+    private var processor: DrawProcessor { return toolboxController.processorVC.processor }
+    private var brush: Brush { return toolboxController.brushVC.brush }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        toolController.delegate = self
+        toolboxController.context = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,21 +28,25 @@ class DrawController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        currentProcessor.touchBegan(locationInCanvas: touch.location(in: canvas), canvasLayer: canvas.layer, drawingTool: drawingTool)
+        
+        processor.touchBegan(locationInCanvas: touch.location(in: canvas), canvasLayer: canvas.layer, brush: brush)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        currentProcessor.touchMoved(locationInCanvas: touch.location(in: canvas))
+        if let touches = event?.coalescedTouches(for: touch) {
+            touches.forEach { processor.touchMoved(locationInCanvas: $0.location(in: canvas)) }
+        }
+        processor.touchMoved(locationInCanvas: touch.location(in: canvas))
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        currentProcessor.touchEnded(locationInCanvas: touch.location(in: canvas))
+        processor.touchEnded(locationInCanvas: touch.location(in: canvas))
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        currentProcessor.touchCancelled(locationInCanvas: nil)
+        processor.touchCancelled(locationInCanvas: nil)
     }
     
     @IBAction private func clearPressed() {
@@ -50,19 +54,12 @@ class DrawController: UIViewController {
     }
     
     @IBAction private func editPressed() {
-        toolController.drawingTool = drawingTool
-        toolController.becomeFirstResponder()
+        toolboxController.becomeFirstResponder()
     }
     
     @IBAction private func actionPressed() {
         let imageToShare = UIGraphicsImageRenderer(size: canvas.frame.size).image { canvas.layer.render(in: $0.cgContext) }
         let activityVC = UIActivityViewController(activityItems: [imageToShare], applicationActivities: nil)
         present(activityVC, animated: true, completion: nil)
-    }
-}
-
-extension DrawController: ToolControllerDelegate {
-    func toolController(_ toolController: ToolController, didChangedDrawingTool drawingTool: DrawingTool) {
-        self.drawingTool = drawingTool
     }
 }

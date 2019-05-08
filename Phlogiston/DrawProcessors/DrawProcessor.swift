@@ -11,8 +11,10 @@ import UIKit
 protocol DrawProcessor {
     var currentLayer: CALayer? { get }
     
-    func touchBegan(locationInCanvas: CGPoint, canvasLayer: CALayer, drawingTool: DrawingTool)
+    func touchBegan(locationInCanvas: CGPoint, canvasLayer: CALayer, brush: Brush)
     func touchMoved(locationInCanvas: CGPoint)
     func touchEnded(locationInCanvas: CGPoint)
     func touchCancelled(locationInCanvas: CGPoint?)
+    
+    var processorViewController: UIViewController? { get }
 }

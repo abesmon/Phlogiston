@@ -12,14 +12,14 @@ class CoreProcessor: DrawProcessor {
     private var currentPath: UIBezierPath?
     var currentLayer: CALayer?
     
-    func touchBegan(locationInCanvas: CGPoint, canvasLayer: CALayer, drawingTool: DrawingTool) {
+    func touchBegan(locationInCanvas: CGPoint, canvasLayer: CALayer, brush: Brush) {
         currentPath = UIBezierPath()
         currentPath?.move(to: locationInCanvas)
         
         let shLayer = CAShapeLayer()
-        shLayer.fillColor = drawingTool.fillColor?.cgColor
-        shLayer.strokeColor = drawingTool.strokeColor?.cgColor
-        shLayer.lineWidth = drawingTool.lineWidth
+        shLayer.strokeColor = brush.color.cgColor
+        shLayer.fillColor = brush.withFill ? shLayer.strokeColor : nil
+        shLayer.lineWidth = brush.lineWidth
         currentLayer = shLayer
         
         canvasLayer.addSublayer(shLayer)
@@ -50,4 +50,6 @@ class CoreProcessor: DrawProcessor {
         self.currentPath = nil
         self.currentLayer = nil
     }
+    
+    var processorViewController: UIViewController? { return nil }
 }
