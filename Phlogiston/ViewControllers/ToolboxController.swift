@@ -32,6 +32,10 @@ class ToolboxController: UIPageViewController {
     // Responder
     weak var context: UIResponder?
     override var canBecomeFirstResponder: Bool { return true }
+    override func resignFirstResponder() -> Bool {
+        super.resignFirstResponder()
+        return true
+    }
     override var inputView: UIView? { return view }
     override var inputAccessoryView: UIView? {
         let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: 44)))

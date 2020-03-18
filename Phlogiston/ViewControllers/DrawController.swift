@@ -19,6 +19,7 @@ class DrawController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         toolboxController.context = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,8 +55,11 @@ class DrawController: UIViewController {
     }
     
     @IBAction private func editPressed() {
+        addChild(toolboxController)
         toolboxController.becomeFirstResponder()
     }
+    
+    override var canBecomeFirstResponder: Bool { return true }
     
     @IBAction private func actionPressed() {
         let imageToShare = UIGraphicsImageRenderer(size: canvas.frame.size).image { canvas.layer.render(in: $0.cgContext) }
