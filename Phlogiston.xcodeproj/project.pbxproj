@@ -565,12 +565,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DG6XTXB3C9;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 548GRBZ3D6;
 				INFOPLIST_FILE = Phlogiston/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.syrupmg.Phlogiston;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -581,12 +583,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DG6XTXB3C9;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 548GRBZ3D6;
 				INFOPLIST_FILE = Phlogiston/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.syrupmg.Phlogiston;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
