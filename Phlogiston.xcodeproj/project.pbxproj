@@ -3,11 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D2947030B236C5FFCB4095A /* Pods_Phlogiston.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84076FD1EA236338E27ACA46 /* Pods_Phlogiston.framework */; };
+		376146B4270E13E0003B6A5C /* ChromaControlStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146A5270E13E0003B6A5C /* ChromaControlStylable.swift */; };
+		376146B5270E13E0003B6A5C /* ChromaBrightnessSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146A6270E13E0003B6A5C /* ChromaBrightnessSlider.swift */; };
+		376146B6270E13E0003B6A5C /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146A8270E13E0003B6A5C /* UIView+Utils.swift */; };
+		376146B7270E13E0003B6A5C /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146A9270E13E0003B6A5C /* UIColor+Utils.swift */; };
+		376146B8270E13E0003B6A5C /* UIColor+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146AA270E13E0003B6A5C /* UIColor+Brightness.swift */; };
+		376146B9270E13E0003B6A5C /* UIView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146AB270E13E0003B6A5C /* UIView+DropShadow.swift */; };
+		376146BA270E13E0003B6A5C /* ChromaColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146AD270E13E0003B6A5C /* ChromaColorPicker.swift */; };
+		376146BB270E13E0003B6A5C /* ColorWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146AE270E13E0003B6A5C /* ColorWheelView.swift */; };
+		376146BD270E13E0003B6A5C /* SliderTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146B1270E13E0003B6A5C /* SliderTrackView.swift */; };
+		376146BE270E13E0003B6A5C /* ChromaColorHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146B2270E13E0003B6A5C /* ChromaColorHandle.swift */; };
+		376146BF270E13E0003B6A5C /* SliderHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376146B3270E13E0003B6A5C /* SliderHandleView.swift */; };
 		A02ED6DB2283015C0027856B /* ToolboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02ED6DA2283015C0027856B /* ToolboxController.swift */; };
 		A02ED6DE228306320027856B /* ProcessorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02ED6DC228306320027856B /* ProcessorVC.swift */; };
 		A02ED6DF228306320027856B /* ProcessorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02ED6DD228306320027856B /* ProcessorVC.xib */; };
@@ -42,7 +52,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		84076FD1EA236338E27ACA46 /* Pods_Phlogiston.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phlogiston.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		376146A5270E13E0003B6A5C /* ChromaControlStylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaControlStylable.swift; sourceTree = "<group>"; };
+		376146A6270E13E0003B6A5C /* ChromaBrightnessSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaBrightnessSlider.swift; sourceTree = "<group>"; };
+		376146A8270E13E0003B6A5C /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		376146A9270E13E0003B6A5C /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		376146AA270E13E0003B6A5C /* UIColor+Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Brightness.swift"; sourceTree = "<group>"; };
+		376146AB270E13E0003B6A5C /* UIView+DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+DropShadow.swift"; sourceTree = "<group>"; };
+		376146AC270E13E0003B6A5C /* ChromaColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChromaColorPicker.h; sourceTree = "<group>"; };
+		376146AD270E13E0003B6A5C /* ChromaColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaColorPicker.swift; sourceTree = "<group>"; };
+		376146AE270E13E0003B6A5C /* ColorWheelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWheelView.swift; sourceTree = "<group>"; };
+		376146AF270E13E0003B6A5C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		376146B1270E13E0003B6A5C /* SliderTrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderTrackView.swift; sourceTree = "<group>"; };
+		376146B2270E13E0003B6A5C /* ChromaColorHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaColorHandle.swift; sourceTree = "<group>"; };
+		376146B3270E13E0003B6A5C /* SliderHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderHandleView.swift; sourceTree = "<group>"; };
 		A02ED6DA2283015C0027856B /* ToolboxController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxController.swift; sourceTree = "<group>"; };
 		A02ED6DC228306320027856B /* ProcessorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessorVC.swift; sourceTree = "<group>"; };
 		A02ED6DD228306320027856B /* ProcessorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProcessorVC.xib; sourceTree = "<group>"; };
@@ -70,8 +92,6 @@
 		A0DE566F2281A639008ECDCF /* BrushVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrushVC.xib; sourceTree = "<group>"; };
 		A0DE56712281D203008ECDCF /* ChaoticProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaoticProcessor.swift; sourceTree = "<group>"; };
 		A0DE56732281D21B008ECDCF /* CGPoint_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint_ext.swift; sourceTree = "<group>"; };
-		B8A0BF57D9F8F0A1A9710FFD /* Pods-Phlogiston.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlogiston.release.xcconfig"; path = "Target Support Files/Pods-Phlogiston/Pods-Phlogiston.release.xcconfig"; sourceTree = "<group>"; };
-		F3AA4738D298C799DEF79E65 /* Pods-Phlogiston.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Phlogiston.debug.xcconfig"; path = "Target Support Files/Pods-Phlogiston/Pods-Phlogiston.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D2947030B236C5FFCB4095A /* Pods_Phlogiston.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,23 +112,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15C6646828D72E320B4C2F94 /* Frameworks */ = {
+		376146A3270E13CE003B6A5C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				84076FD1EA236338E27ACA46 /* Pods_Phlogiston.framework */,
+				376146A4270E13E0003B6A5C /* ChromaColorPicker */,
 			);
-			name = Frameworks;
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		376146A4270E13E0003B6A5C /* ChromaColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				376146A5270E13E0003B6A5C /* ChromaControlStylable.swift */,
+				376146A6270E13E0003B6A5C /* ChromaBrightnessSlider.swift */,
+				376146A7270E13E0003B6A5C /* Extensions */,
+				376146AC270E13E0003B6A5C /* ChromaColorPicker.h */,
+				376146AD270E13E0003B6A5C /* ChromaColorPicker.swift */,
+				376146AE270E13E0003B6A5C /* ColorWheelView.swift */,
+				376146AF270E13E0003B6A5C /* Info.plist */,
+				376146B0270E13E0003B6A5C /* Supporting Views */,
+			);
+			path = ChromaColorPicker;
+			sourceTree = "<group>";
+		};
+		376146A7270E13E0003B6A5C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				376146A8270E13E0003B6A5C /* UIView+Utils.swift */,
+				376146A9270E13E0003B6A5C /* UIColor+Utils.swift */,
+				376146AA270E13E0003B6A5C /* UIColor+Brightness.swift */,
+				376146AB270E13E0003B6A5C /* UIView+DropShadow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		376146B0270E13E0003B6A5C /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				376146B1270E13E0003B6A5C /* SliderTrackView.swift */,
+				376146B2270E13E0003B6A5C /* ChromaColorHandle.swift */,
+				376146B3270E13E0003B6A5C /* SliderHandleView.swift */,
+			);
+			path = "Supporting Views";
 			sourceTree = "<group>";
 		};
 		A038F3C52276F0E4001B6F74 = {
 			isa = PBXGroup;
 			children = (
+				376146A3270E13CE003B6A5C /* Libs */,
 				A0DE566222818696008ECDCF /* Tools */,
 				A038F3D02276F0E4001B6F74 /* Phlogiston */,
 				A0BAF16022808C5C009C1E89 /* PhlogistonUITests */,
 				A038F3CF2276F0E4001B6F74 /* Products */,
-				ABBB0613D2C510912D45FAFF /* Pods */,
-				15C6646828D72E320B4C2F94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,15 +246,6 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		ABBB0613D2C510912D45FAFF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F3AA4738D298C799DEF79E65 /* Pods-Phlogiston.debug.xcconfig */,
-				B8A0BF57D9F8F0A1A9710FFD /* Pods-Phlogiston.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,12 +253,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A038F3E02276F0E6001B6F74 /* Build configuration list for PBXNativeTarget "Phlogiston" */;
 			buildPhases = (
-				0C27AF00342F4C9DEF6D748E /* [CP] Check Pods Manifest.lock */,
 				A07D43CD22789AC20099415F /* build-bumper */,
 				A038F3CA2276F0E4001B6F74 /* Sources */,
 				A038F3CB2276F0E4001B6F74 /* Frameworks */,
 				A038F3CC2276F0E4001B6F74 /* Resources */,
-				B45D40214A36E303F949CAF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,7 +292,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Syrup Media Group";
 				TargetAttributes = {
 					A038F3CD2276F0E4001B6F74 = {
@@ -304,28 +347,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C27AF00342F4C9DEF6D748E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Phlogiston-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A07D43CD22789AC20099415F /* build-bumper */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,23 +365,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${SRCROOT}/build-bumper.sh\n";
 		};
-		B45D40214A36E303F949CAF9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Phlogiston/Pods-Phlogiston-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Phlogiston/Pods-Phlogiston-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Phlogiston/Pods-Phlogiston-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -368,19 +372,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376146B7270E13E0003B6A5C /* UIColor+Utils.swift in Sources */,
+				376146B5270E13E0003B6A5C /* ChromaBrightnessSlider.swift in Sources */,
 				A07D43C9227868D10099415F /* NSLayoutConstraint_ext.swift in Sources */,
+				376146BF270E13E0003B6A5C /* SliderHandleView.swift in Sources */,
+				376146BB270E13E0003B6A5C /* ColorWheelView.swift in Sources */,
+				376146B6270E13E0003B6A5C /* UIView+Utils.swift in Sources */,
 				A02ED6DE228306320027856B /* ProcessorVC.swift in Sources */,
 				A0DE566C2281A55D008ECDCF /* ZoomController.swift in Sources */,
+				376146B4270E13E0003B6A5C /* ChromaControlStylable.swift in Sources */,
 				A02ED6DB2283015C0027856B /* ToolboxController.swift in Sources */,
 				A0DE56692281A484008ECDCF /* CoreProcessor.swift in Sources */,
+				376146B9270E13E0003B6A5C /* UIView+DropShadow.swift in Sources */,
 				A07D43CB227876E30099415F /* BrushVC.swift in Sources */,
 				A0DE56672281A470008ECDCF /* DrawProcessor.swift in Sources */,
 				A038F3D42276F0E4001B6F74 /* DrawController.swift in Sources */,
+				376146B8270E13E0003B6A5C /* UIColor+Brightness.swift in Sources */,
 				A0DE566E2281A5D2008ECDCF /* Brush.swift in Sources */,
 				A0DE56722281D203008ECDCF /* ChaoticProcessor.swift in Sources */,
 				A02ED6E222831BE10027856B /* ChaoticProcessorVC.swift in Sources */,
+				376146BE270E13E0003B6A5C /* ChromaColorHandle.swift in Sources */,
+				376146BA270E13E0003B6A5C /* ChromaColorPicker.swift in Sources */,
 				A0DE56742281D21B008ECDCF /* CGPoint_ext.swift in Sources */,
 				A038F3D22276F0E4001B6F74 /* AppDelegate.swift in Sources */,
+				376146BD270E13E0003B6A5C /* SliderTrackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +464,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -481,6 +497,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -510,6 +528,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -535,47 +554,41 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		A038F3E12276F0E6001B6F74 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3AA4738D298C799DEF79E65 /* Pods-Phlogiston.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DG6XTXB3C9;
 				INFOPLIST_FILE = Phlogiston/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.syrupmg.Phlogiston.victor;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.syrupmg.Phlogiston;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		A038F3E22276F0E6001B6F74 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8A0BF57D9F8F0A1A9710FFD /* Pods-Phlogiston.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DG6XTXB3C9;
 				INFOPLIST_FILE = Phlogiston/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.syrupmg.Phlogiston.victor;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.syrupmg.Phlogiston;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ChromaColorPicker
 
 protocol BrushControllerDelegate: AnyObject {
     func brushController(_ toolController: BrushVC, didChangedBrush brush: Brush)
@@ -16,6 +15,7 @@ protocol BrushControllerDelegate: AnyObject {
 class BrushVC: UIViewController {
     @IBOutlet private weak var alphaSlider: UISlider!
     @IBOutlet private weak var withFillSwitch: UISwitch!
+    @IBOutlet private weak var chromaBrightnessSlider: ChromaBrightnessSlider!
     @IBOutlet private weak var chromaPicker: ChromaColorPicker!
     
     weak var delegate: (BrushControllerDelegate & UIResponder)?
@@ -39,14 +39,15 @@ class BrushVC: UIViewController {
             if isViewLoaded {
                 alphaSlider.value = Float(alpha)
                 withFillSwitch.isOn = withFill
-                chromaPicker.adjustToColor(color)
+                chromaPicker.handles.first?.color = color
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chromaPicker.supportsShadesOfGray = true
+        chromaPicker.connect(chromaBrightnessSlider)
+        chromaPicker.addHandle(at: color)
         chromaPicker.delegate = self
         
         alphaSlider.value = Float(alpha)
@@ -71,8 +72,16 @@ class BrushVC: UIViewController {
 }
 
 extension BrushVC: ChromaColorPickerDelegate {
-    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+    func colorPickerHandleDidChange(_ colorPicker: ChromaColorPicker, handle: ChromaColorHandle, to color: UIColor) {
         self.color = color
         delegate?.brushController(self, didChangedBrush: brush)
+    }
+}
+
+extension ChromaColorPicker {
+    var currentColor: UIColor { currentHandle!.color }
+    
+    func adjustToColor(_ color: UIColor) {
+        currentHandle?.color = color
     }
 }

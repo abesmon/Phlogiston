@@ -33,12 +33,13 @@ class ToolboxController: UIPageViewController {
     weak var context: UIResponder?
     override var canBecomeFirstResponder: Bool { return true }
     override func resignFirstResponder() -> Bool {
-        super.resignFirstResponder()
-        return true
+        return super.resignFirstResponder()
+//        return true
     }
     override var inputView: UIView? { return view }
     override var inputAccessoryView: UIView? {
-        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: 44)))
+        let parentWidth = (context as? UIViewController)?.view.bounds.width ?? 0
+        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: parentWidth, height: 44)))
         toolbar.setItems([UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(resignFirstResponder))], animated: false)
         return toolbar
     }
