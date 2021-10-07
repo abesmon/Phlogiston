@@ -61,9 +61,10 @@ class DrawController: UIViewController {
     
     override var canBecomeFirstResponder: Bool { return true }
     
-    @IBAction private func actionPressed() {
+    @IBAction private func actionPressed(_ sender: UIBarButtonItem?) {
         let imageToShare = UIGraphicsImageRenderer(size: canvas.frame.size).image { canvas.layer.render(in: $0.cgContext) }
         let activityVC = UIActivityViewController(activityItems: [imageToShare], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = sender?.value(forKey: "view") as? UIView
         present(activityVC, animated: true, completion: nil)
     }
 }

@@ -56,7 +56,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="AWw-Db-dI8"/>
                                     <barButtonItem systemItem="action" id="jb8-05-GxR">
                                         <connections>
-                                            <action selector="actionPressed" destination="BYZ-38-t0r" id="COz-Yu-LBV"/>
+                                            <action selector="actionPressed:" destination="BYZ-38-t0r" id="XAE-73-F62"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
